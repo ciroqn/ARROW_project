@@ -10,3 +10,7 @@ The rotational speed of the Galaxy will be plotted as a function of distance fro
 ARROW is located at the Open University's campus in Milton Keynes, and is functions as a steerable 3-metre telescope dish. It has a detector that is capable of detecting/receiving 21 cm radio emissions.
 
 ## Planning Observing Session
+
+Targets will need to be picked that are not in the *exclusion zone*, which is the zone through which the dish cannot rotate due to hardware limitations. The exclusion zone is in `Alt/Az` coordinates:
+  - 20 deg < Azimuth < 340 deg
+  - 20 deg < Altitude < 80 deg
