@@ -24,3 +24,9 @@ The dish takes roughly 5-6 seconds to rotate by 1 degree (so ~ 10 degrees / minu
 The two 'status' panes (lower left) of the UI is shows the dish orientation ("Drive") and the weather. The first pane either has a status of "Slewing", menaing the dish is on the move, or "Stopped". When the dish has stopped, the RA/Dec coordinates should be changing only slowly, and the Alt/Az coordinates should remain constant. And when a target is being tracked, only the Alt/Az coordinates should change, and the RA/Dec should remain relatively constant.
 
 Of course, the weather needs to be fairly calm, otherwise tracking may be slightly off (and the wind may contribute to the disturbance). Thus, the weather conditions the experimenter needs to monitor are wind speed and temperature. Winds over 30 km/h (~8.3 m/s) should be noted, since at these speeds, the dish starts to wobble, and there will be additional noise when scanning. Similarly, if the temperature is below -5 degrees Celsius, then the grease in the mount bearings may not lubricate properly, and so tracking may be lost.
+
+### Data/Graph Pane
+
+The graph is the signal intensity (y-axis) vs Doppler shifts (x-axis), which is labelled about the HI rest frequency (0.0).
+
+The graph will show two tabs, "Current" and "Previous", for the current and previous scans. This will be useful for visual comparisons between two adjacent coordinates or for detecting any radio interference/noise. The 'download' button will save the data as a `.csv` file. The dowload is available after the next scan is started.
