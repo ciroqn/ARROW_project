@@ -14,3 +14,5 @@ ARROW is located at the Open University's campus in Milton Keynes, and is functi
 Targets will need to be picked that are not in the *exclusion zone*, which is the zone through which the dish cannot rotate due to hardware limitations. The exclusion zone is in `Alt/Az` coordinates:
   - 20 deg < Azimuth < 340 deg
   - 20 deg < Altitude < 80 deg
+
+The dish takes roughly 5-6 seconds to rotate by 1 degree (so ~ 10 degrees / minute). Also, it takes around 15 seconds to run a quic scan (and 100s for a full scane), and this would be done, typically, only to confirm that the dish has been turned away from an unkown source of radio interference. Interference shows up as sharp peaks on the graph, and if these sharp peaks are close to the H1 line, then it will be necessary to shift the dish 1-2 degrees to the right or left and make a quick scan to investiage the interference.
