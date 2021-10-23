@@ -8,3 +8,5 @@ The rotational speed of the Galaxy will be plotted as a function of distance fro
 ## About ARROW itself
 
 ARROW is located at the Open University's campus in Milton Keynes, and is functions as a steerable 3-metre telescope dish. It has a detector that is capable of detecting/receiving 21 cm radio emissions.
+
+## Planning Observing Session
