@@ -36,3 +36,5 @@ When the operator locks onto a target (i.e. tracks a target, once the coordinate
 **Each broad peak on the graph represents a large mass of atomic hydrogen moving independently of each other (as we go along the x-axis, there may be multiple broad peaks - so these will be at different frequencies, and thus have differing radial velocities).**
 
 There is also a slight upward trend of the spectra, which will be discussed later.
+
+## Scanning and Radio Frequency Interference (RFI)
