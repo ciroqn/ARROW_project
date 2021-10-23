@@ -4,3 +4,6 @@
 with open('gal_coords_targets.csv', mode='r') as galactic_coords:
     read_file = galactic_coords.read()
     print(read_file)
+    
+# Import pandas, since we will need this for the 'read_csv' method
+import pandas as pd
