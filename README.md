@@ -29,4 +29,6 @@ Of course, the weather needs to be fairly calm, otherwise tracking may be slight
 
 The graph is the signal intensity (y-axis) vs Doppler shifts (x-axis), which is labelled about the HI rest frequency (0.0).
 
-The graph will show two tabs, "Current" and "Previous", for the current and previous scans. This will be useful for visual comparisons between two adjacent coordinates or for detecting any radio interference/noise. The 'download' button will save the data as a `.csv` file. The dowload is available after the next scan is started.
+The graph will show two tabs, "Current" and "Previous", for the current and previous scans. This will be useful for visual comparisons between two adjacent coordinates or for detecting any radio interference/noise. The 'download' button will save the data as a `.csv` file. The dowload is available after the next scan is started.  
+
+When the operator locks onto a target (i.e. tracks a target, once the coordinates have been successuflly located), then the "Full Scan" will be pressed gived a trace from L-to-R. The *x-axis*, as already noted, representes increasing frequences, and the higher the frequencies (shorter wavelengths) correspond to negative radial velocities; that is, the motion of the source is towards the observer). The rest frequency of atomic hydrogen (0.0 on graph) has been subtracted from the graph, and so negative frequencies correspond to redshifted hydrogen gas clouds, and positive ones are blueshifted.
