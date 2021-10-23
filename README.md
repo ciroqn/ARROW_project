@@ -31,10 +31,12 @@ The graph is the signal intensity (y-axis) vs Doppler shifts (x-axis), which is 
 
 The graph will show two tabs, "Current" and "Previous", for the current and previous scans. This will be useful for visual comparisons between two adjacent coordinates or for detecting any radio interference/noise. The 'download' button will save the data as a `.csv` file. The dowload is available after the next scan is started.  
 
-When the operator locks onto a target (i.e. tracks a target, once the coordinates have been successuflly located), then the "Full Scan" will be pressed gived a trace from L-to-R. The *x-axis*, as already noted, representes increasing frequences, and the higher the frequencies (shorter wavelengths) correspond to negative radial velocities; that is, the motion of the source is towards the observer). The rest frequency of atomic hydrogen (0.0 on graph) has been subtracted from the graph, and so negative frequencies correspond to redshifted hydrogen gas clouds, and positive ones are blueshifted.
+When the operator locks onto a target (i.e. tracks a target, once the coordinates have been successuflly located), then the "Full Scan" will be pressed giving a trace from L-to-R. The *x-axis*, as already noted, representes increasing frequencies, and the higher the frequencies (shorter wavelengths) correspond to negative radial velocities; that is, the motion of the source is towards the observer). The rest frequency of atomic hydrogen (0.0 on graph) has been subtracted from the graph, and so negative frequencies correspond to redshifted hydrogen gas clouds, and positive ones are blueshifted.
 
 **Each broad peak on the graph represents a large mass of atomic hydrogen moving independently of each other (as we go along the x-axis, there may be multiple broad peaks - so these will be at different frequencies, and thus have differing radial velocities).**
 
 There is also a slight upward trend of the spectra, which will be discussed later.
 
 ## Scanning and Radio Frequency Interference (RFI)
+
+Sometimes when scanning, the operator may come across RFI - these usually manifest as a series of sharp peaks spaced uniformly across the spectrum. This is opposed to the broad peaks that a caused by hydrogen clouds from our Galaxy. Thus, if there are sharp peaks (noise) in the vicinity of the broader peaks (which we *do* want), then it will be necessary to think about how to mitigate this: the dish may need to move to slightly different coordinates and then take another scan (perhaps a *quick scan first* to check whether or not the RFI has been removed, and *then* a *full scan* if the quick scan has fixed the noise).
