@@ -231,4 +231,4 @@ The Alt/Az coordinates, with Azimuth 58.532 and Altitude -40.077, are in NOT in 
 The Alt/Az coordinates, with Azimuth 60.017 and Altitude -49.957, are in NOT in range.
 ```
 
-----> Note that each Alt/Az coord above is listed in the same order as the RA/Dec values at the top of this file (which, in turn, was 'read' from [this file](https://github.com/ciroqn/ARROW_project/blob/main/gal_coords_targets.csv).
+----> Note that each Alt/Az coord above is listed in the same order as the RA/Dec values at the top of this file (which, in turn, was 'read' from [this file](https://github.com/ciroqn/ARROW_project/blob/main/gal_coords_targets.csv)).
