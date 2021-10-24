@@ -34,6 +34,6 @@ altaz_coords = potential_target.transform_to(altaz_obsframe)
 # Determine if Alt/Az coords are out of range of ARROW's dish with the time of potential observation attached:
 
 if int(altaz_coords.az.degree) > 20 and int(altaz_coords.az.degree) < 340 and int(altaz_coords.alt.degree) > 20 and int(altaz_coords.alt.degree) < 80:
-   print(f'The Alt/Az coordinates, with Azimuth {altaz_coords.az.deg:.3f} and Altitude {altaz_coords.alt.deg:.3f}, are in range, and are VISIBLE at', time_string)
+   print(f'The Alt/Az coordinates, with Azimuth {altaz_coords.az.deg:.3f} and Altitude {altaz_coords.alt.deg:.3f}, are in range, and are VISIBLE at', time_string, '; RA/Dec: (', RA, ',', DEC, ')')
 else:
-   print(f'The Alt/Az coordinates, with Azimuth {altaz_coords.az.deg:.3f} and Altitude {altaz_coords.alt.deg:.3f}, are in NOT in range at', time_string)
+   print(f'The Alt/Az coordinates, with Azimuth {altaz_coords.az.deg:.3f} and Altitude {altaz_coords.alt.deg:.3f}, are in NOT in range at', time_string, '; RA/Dec: (', RA, ',', DEC, ')')
