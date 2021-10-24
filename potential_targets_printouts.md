@@ -234,3 +234,42 @@ The Alt/Az coordinates, with Azimuth 50.963 and Altitude -53.683, are in NOT in 
 ```
 
 ----> Note that each Alt/Az coord above is listed in the same order as the RA/Dec values at the top of this file (which, in turn, was 'read' from [this file](https://github.com/ciroqn/ARROW_project/blob/main/gal_coords_targets.csv)).
+
+----> Alternatively, instead of expressing the RA/DEC in degrees, they could be expressed at h:m:s and d:m:s for the RA and Dec, respectively. In this case, the conidtional statement will look like this:
+
+```py
+count = 0
+for altaz_set in altaz_coords:
+    if int(altaz_set.az.degree) > 20 and int(altaz_set.az.degree) < 340 and int(altaz_set.alt.degree) > 20 and int(altaz_set.alt.degree) < 80:
+        print(f'The Alt/Az coordinates, with Azimuth {altaz_set.az.deg:.3f} and Altitude {altaz_set.alt.deg:.3f}, are in range, and are VISIBLE at', t_str, '; RA/Dec: (', df['RA'][count], ',', df['DEC'][count],')')
+    else:
+        print(f'The Alt/Az coordinates, with Azimuth {altaz_set.az.deg:.3f} and Altitude {altaz_set.alt.deg:.3f}, are in NOT in range at', t_str, '; RA/Dec: (', df['RA'][count], ',', df['DEC'][count],')')
+    count += 1
+```
+```
+----> Where the DataFrame, df, was defined earlier when 'reading' the .csv file. Thus, the RA/DEC format as expressed in the file will be shown:
+
+The Alt/Az coordinates, with Azimuth 251.569 and Altitude -0.313, are in NOT in range at 21:15:00 ; RA/Dec: ( 18h27m00s , -11d29m00s )
+The Alt/Az coordinates, with Azimuth 253.051 and Altitude 9.634, are in NOT in range at 21:15:00 ; RA/Dec: ( 18h46m00s , -02d36m00s )
+The Alt/Az coordinates, with Azimuth 254.768 and Altitude 19.450, are in NOT in range at 21:15:00 ; RA/Dec: ( 19h04m00s , +06d17m00s )
+The Alt/Az coordinates, with Azimuth 256.631 and Altitude 29.309, are in range, and are VISIBLE at 21:15:00 ; RA/Dec: ( 19h23m00s , +15d08m00s )
+The Alt/Az coordinates, with Azimuth 259.049 and Altitude 39.043, are in range, and are VISIBLE at 21:15:00 ; RA/Dec: ( 19h43m00s , +23d53m00s )
+The Alt/Az coordinates, with Azimuth 261.982 and Altitude 48.871, are in range, and are VISIBLE at 21:15:00 ; RA/Dec: ( 20h07m00s , +32d26m00s )
+The Alt/Az coordinates, with Azimuth 266.572 and Altitude 58.448, are in range, and are VISIBLE at 21:15:00 ; RA/Dec: ( 20h35m00s , +40d39m00s )
+The Alt/Az coordinates, with Azimuth 274.295 and Altitude 67.949, are in range, and are VISIBLE at 21:15:00 ; RA/Dec: ( 21h12m00s , +48d19m00s )
+The Alt/Az coordinates, with Azimuth 292.097 and Altitude 76.448, are in range, and are VISIBLE at 21:15:00 ; RA/Dec: ( 22h00m00s , +55d02m00s )
+The Alt/Az coordinates, with Azimuth 339.565 and Altitude 81.051, are in NOT in range at 21:15:00 ; RA/Dec: ( 23h04m00s , +60d09m00s )
+The Alt/Az coordinates, with Azimuth 29.174 and Altitude 76.868, are in range, and are VISIBLE at 21:15:00 ; RA/Dec: ( 00h25m00s , +62d43m00s )
+The Alt/Az coordinates, with Azimuth 48.121 and Altitude 68.421, are in range, and are VISIBLE at 21:15:00 ; RA/Dec: ( 01h52m00s , +62d02m00s )
+The Alt/Az coordinates, with Azimuth 56.355 and Altitude 59.075, are in range, and are VISIBLE at 21:15:00 ; RA/Dec: ( 03h07m00s , +58d17m00s )
+The Alt/Az coordinates, with Azimuth 60.988 and Altitude 49.472, are in range, and are VISIBLE at 21:15:00 ; RA/Dec: ( 04h04m00s , +52d25m00s )
+The Alt/Az coordinates, with Azimuth 64.165 and Altitude 39.781, are in range, and are VISIBLE at 21:15:00 ; RA/Dec: ( 04h46m00s , +45d14m00s )
+The Alt/Az coordinates, with Azimuth 66.418 and Altitude 29.894, are in range, and are VISIBLE at 21:15:00 ; RA/Dec: ( 05h19m00s , +37d18m00s )
+The Alt/Az coordinates, with Azimuth 68.331 and Altitude 20.070, are in NOT in range at 21:15:00 ; RA/Dec: ( 05h45m00s , +28d56m00s )
+The Alt/Az coordinates, with Azimuth 70.036 and Altitude 10.220, are in NOT in range at 21:15:00 ; RA/Dec: ( 06h07m00s , +20d17m00s )
+The Alt/Az coordinates, with Azimuth 71.564 and Altitude 0.311, are in NOT in range at 21:15:00 ; RA/Dec: ( 06h27m00s , +11d29m00s )
+The Alt/Az coordinates, with Azimuth 73.046 and Altitude -9.633, are in NOT in range at 21:15:00 ; RA/Dec: ( 06h46m00s , +02d36m00s )
+The Alt/Az coordinates, with Azimuth 74.761 and Altitude -19.448, are in NOT in range at 21:15:00 ; RA/Dec: ( 07h04m00s , -06d17m00s )
+The Alt/Az coordinates, with Azimuth 76.624 and Altitude -29.306, are in NOT in range at 21:15:00 ; RA/Dec: ( 07h23m00s , -15d08m00s )
+The Alt/Az coordinates, with Azimuth 79.040 and Altitude -39.039, are in NOT in range at 21:15:00 ; RA/Dec: ( 07h43m00s , -23d53m00s )
+```
