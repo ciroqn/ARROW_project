@@ -21,7 +21,7 @@ arrow = EarthLocation(lat=52.024444*u.deg, lon=-0.706388*u.deg, height=114*u.m)
 
 # Random RA/Dec (potential target) in SkyCoord() constructor
 
-potential_target = SkyCoord('19h04m00s', '06d17m00s')
+potential_target = SkyCoord('19h04m00s', '06d17m00s')       # <---- this can be changed also to track targets
 
 # Create AltAz observation frame
 
