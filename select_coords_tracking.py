@@ -7,7 +7,9 @@ from astropy.time import Time
 
 # Date and time of observation. The time can be changed so the changing Alt/Az can be monitored.
 
-dt_string = '2021-11-04T19:20:00'   # <---- Time can be changed 
+time_string = '19:20:00'
+
+dt_string = '2021-11-04T' + time_string   # <---- Time can be changed 
 
 # Use Time() constructor using necessary formats (including 'isot')
 
@@ -28,3 +30,8 @@ altaz_obsframe = AltAz(obstime=obs_time, location=arrow)
 # Convert potential target to AltAz frame
 
 altaz_coords = potential_target.transform_to(altaz_obsframe)
+
+if int(altaz_coords.az.degree) > 20 and int(altaz_coords.az.degree) < 340 and int(altaz_coords.alt.degree) > 20 and int(altaz_coords.alt.degree) < 80:
+   print(f'The Alt/Az coordinates, with Azimuth {altaz_coords.az.deg:.3f} and Altitude {altaz_coords.alt.deg:.3f}, are in range, and are VISIBLE at', time_string)
+else:
+   print(f'The Alt/Az coordinates, with Azimuth {altaz_coords.az.deg:.3f} and Altitude {altaz_coords.alt.deg:.3f}, are in NOT in range at', time_string)
