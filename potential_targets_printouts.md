@@ -191,3 +191,44 @@ print(altaz_coords)
     (58.53154962, -40.07710665)>, <SkyCoord (AltAz: obstime=2021-11-04T19:20:00.000, location=(3932588.11129261, -48486.53479912, 5004567.24279243) m, pressure=0.0 hPa, temperature=0.0 deg_C, relative_humidity=0.0, obswl=1.0 micron): (az, alt) in deg
     (60.01722164, -49.95672415)>]
 ```
+
+```py
+# Finally, we loop through each AltAz coord set and determine if it's visible at our observation time and date (and location) using 
+# 'f-strings' for neat formatting. Note the int() to convert the string to an integer in the 'if' statement:
+
+for altaz_set in altaz_coords:
+    if int(altaz_set.az.degree) > 20 and int(altaz_set.az.degree) < 340 and int(altaz_set.alt.degree) > 20 and int(altaz_set.alt.degree) < 80:
+        print(f'The Alt/Az coordinates, with Azimuth {altaz_set.az.deg:.3f} and Altitude {altaz_set.alt.deg:.3f}, are in range, and are VISIBLE.')
+    else:
+        print(f'The Alt/Az coordinates, with Azimuth {altaz_set.az.deg:.3f} and Altitude {altaz_set.alt.deg:.3f}, are in NOT in range.')
+```
+
+```
+----> From the loop above, we should get the following statements:
+
+The Alt/Az coordinates, with Azimuth 236.120 and Altitude 10.143, are in NOT in range.
+The Alt/Az coordinates, with Azimuth 236.725 and Altitude 20.181, are in NOT in range.
+The Alt/Az coordinates, with Azimuth 237.583 and Altitude 30.106, are in range, and are VISIBLE.
+The Alt/Az coordinates, with Azimuth 238.541 and Altitude 40.080, are in range, and are VISIBLE.
+The Alt/Az coordinates, with Azimuth 240.028 and Altitude 49.960, are in range, and are VISIBLE.
+The Alt/Az coordinates, with Azimuth 241.916 and Altitude 59.953, are in range, and are VISIBLE.
+The Alt/Az coordinates, with Azimuth 245.821 and Altitude 69.768, are in range, and are VISIBLE.
+The Alt/Az coordinates, with Azimuth 255.845 and Altitude 79.552, are in range, and are VISIBLE.
+The Alt/Az coordinates, with Azimuth 328.766 and Altitude 86.302, are in NOT in range.
+The Alt/Az coordinates, with Azimuth 35.442 and Altitude 79.178, are in range, and are VISIBLE.
+The Alt/Az coordinates, with Azimuth 45.344 and Altitude 69.535, are in range, and are VISIBLE.
+The Alt/Az coordinates, with Azimuth 49.016 and Altitude 59.595, are in range, and are VISIBLE.
+The Alt/Az coordinates, with Azimuth 51.008 and Altitude 49.650, are in range, and are VISIBLE.
+The Alt/Az coordinates, with Azimuth 52.315 and Altitude 39.723, are in range, and are VISIBLE.
+The Alt/Az coordinates, with Azimuth 53.367 and Altitude 29.811, are in range, and are VISIBLE.
+The Alt/Az coordinates, with Azimuth 54.092 and Altitude 19.775, are in NOT in range.
+The Alt/Az coordinates, with Azimuth 54.808 and Altitude 9.824, are in NOT in range.
+The Alt/Az coordinates, with Azimuth 55.499 and Altitude -0.139, are in NOT in range.
+The Alt/Az coordinates, with Azimuth 56.113 and Altitude -10.145, are in NOT in range.
+The Alt/Az coordinates, with Azimuth 56.717 and Altitude -20.181, are in NOT in range.
+The Alt/Az coordinates, with Azimuth 57.575 and Altitude -30.106, are in NOT in range.
+The Alt/Az coordinates, with Azimuth 58.532 and Altitude -40.077, are in NOT in range.
+The Alt/Az coordinates, with Azimuth 60.017 and Altitude -49.957, are in NOT in range.
+```
+
+----> Note that each Alt/Az coord above is listed in the same order as the RA/Dec values at the top of this file (which, in turn, was 'read' from [this file](https://github.com/ciroqn/ARROW_project/blob/main/gal_coords_targets.csv).
