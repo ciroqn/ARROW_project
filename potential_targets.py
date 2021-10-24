@@ -8,10 +8,38 @@ with open('gal_coords_targets.csv', mode='r') as galactic_coords:
 # Import pandas, since we will need this for the 'read_csv' method, and this printout is much clearer than above
 
 import pandas as pd
+import numpy as np
 
 # Creating a Pandas DataFrame (a more powerful array), using comma-separated variable file, and reading file *from* header (or, row) 1:
 
 df = pd.read_csv('gal_coords_targets.csv', sep=',', header=1)
+
+# Now that we have the DataFrame, the data needs to be sorted into an array (in this case, an array for the RA values AND an array for the Dec values). 
+# When we have these two arrays, the 'zip()' function can be used to join the respective coordinates into one array - and then we should have sets of Ra/Dec coords:
+
+with open('gal_coords_targets.csv', mode='r') as gal_coords:
+    df = pd.read_csv(gal_coords, sep=',', header=1)
+    col_ra = df['RA']                                     # Accessing data in column called 'RA'
+    ra_array = col_ra.array                               # Converting column RA data into array
+    clean_ra_array = []
+    for coord in  ra_array:
+        clean_ra_array.append(coord.strip())              # append data to empty list, clean_ra_array, and stripping the '\n'
+    print(clean_ra_array)
+
+with open('gal_coords_targets.csv', mode='r') as gal_coords:
+    df = pd.read_csv(gal_coords, sep=',', header=1)
+    col_dec = df['DEC']                                   # Accessing data in column 'DEC'
+    dec_array = col_dec.array                             # Turning column DEC data into array (for some reason, this didn't need 'stripping')
+    print(dec_array)
+    
+# Join two array to give a set of coords in array
+
+radec_targets = zip(clean_ra_array, dec_array)             # Joining two array together to give respective RA/Dec coords
+print(radec_targets)                                       # The zip() function creates an object, so we need to convert it
+
+# 'Unzip' zip object and convert it to list
+radec_sets = list(radec_targets)
+print(radec_sets)
 
 
                  
