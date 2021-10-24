@@ -42,5 +42,14 @@ radec_sets = list(radec_targets)
 print(radec_sets)
 
 
+# Now for the second part, which is using 'astropy' to select our location, observation time, and conver the RA/Dec values to Alt/Az. By doing this, we can see
+# what will be visible in the sky at a particular observation at a particular time (in this case ARROW in Milton Keynes, starting at 19:20:00 on 4/11/21
+
+# Import astropy packages
+
+from astropy import constants as c
+from astropy import units as u
+from astropy.coordinates import SkyCoord, EarthLocation, AltAz
+from astropy.time import Time
                  
 
