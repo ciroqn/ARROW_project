@@ -1,6 +1,6 @@
 # These are the terminal printouts from the [potential_targets.py](https://github.com/ciroqn/ARROW_project/blob/main/potential_targets.py) to give a visual check (it can also be done in Jupyter Notebook)
 
-## To see if a coordinate is visible at a particular time string, see code in [this file](https://github.com/ciroqn/ARROW_project/blob/main/select_coords_tracking.py) where one can input a time and a potential target
+## To see if a coordinate is visible at a particular time string, see code in [this file](https://github.com/ciroqn/ARROW_project/blob/main/select_coords_tracking.py) where one can input a time and a potential target (i.e. input RA and Dec values)
 
 ```py
 import pandas as pd
