@@ -208,29 +208,29 @@ for altaz_set in altaz_coords:
 ```
 ----> From the loop above, we should get the following statements:
 
-The Alt/Az coordinates, with Azimuth 236.120 and Altitude 10.143, are in NOT in range at 19:20:00
-The Alt/Az coordinates, with Azimuth 236.725 and Altitude 20.181, are in NOT in range at 19:20:00
-The Alt/Az coordinates, with Azimuth 237.583 and Altitude 30.106, are in range, and are VISIBLE at 19:20:00
-The Alt/Az coordinates, with Azimuth 238.541 and Altitude 40.080, are in range, and are VISIBLE at 19:20:00
-The Alt/Az coordinates, with Azimuth 240.028 and Altitude 49.960, are in range, and are VISIBLE at 19:20:00
-The Alt/Az coordinates, with Azimuth 241.916 and Altitude 59.953, are in range, and are VISIBLE at 19:20:00
-The Alt/Az coordinates, with Azimuth 245.821 and Altitude 69.768, are in range, and are VISIBLE at 19:20:00
-The Alt/Az coordinates, with Azimuth 255.845 and Altitude 79.552, are in range, and are VISIBLE at 19:20:00
-The Alt/Az coordinates, with Azimuth 328.766 and Altitude 86.302, are in NOT in range at 19:20:00
-The Alt/Az coordinates, with Azimuth 35.442 and Altitude 79.178, are in range, and are VISIBLE at 19:20:00
-The Alt/Az coordinates, with Azimuth 45.344 and Altitude 69.535, are in range, and are VISIBLE at 19:20:00
-The Alt/Az coordinates, with Azimuth 49.016 and Altitude 59.595, are in range, and are VISIBLE at 19:20:00
-The Alt/Az coordinates, with Azimuth 51.008 and Altitude 49.650, are in range, and are VISIBLE at 19:20:00
-The Alt/Az coordinates, with Azimuth 52.315 and Altitude 39.723, are in range, and are VISIBLE at 19:20:00
-The Alt/Az coordinates, with Azimuth 53.367 and Altitude 29.811, are in range, and are VISIBLE at 19:20:00
-The Alt/Az coordinates, with Azimuth 54.092 and Altitude 19.775, are in NOT in range at 19:20:00
-The Alt/Az coordinates, with Azimuth 54.808 and Altitude 9.824, are in NOT in range at 19:20:00
-The Alt/Az coordinates, with Azimuth 55.499 and Altitude -0.139, are in NOT in range at 19:20:00
-The Alt/Az coordinates, with Azimuth 56.113 and Altitude -10.145, are in NOT in range at 19:20:00
-The Alt/Az coordinates, with Azimuth 56.717 and Altitude -20.181, are in NOT in range at 19:20:00
-The Alt/Az coordinates, with Azimuth 57.575 and Altitude -30.106, are in NOT in range at 19:20:00
-The Alt/Az coordinates, with Azimuth 58.532 and Altitude -40.077, are in NOT in range at 19:20:00
-The Alt/Az coordinates, with Azimuth 60.017 and Altitude -49.957, are in NOT in range at 19:20:00
+The Alt/Az coordinates, with Azimuth 229.746 and Altitude 13.751, are in NOT in range at 19:30:00 ; RA/Dec: ( 276.75 , -11.4833 )
+The Alt/Az coordinates, with Azimuth 229.836 and Altitude 23.806, are in range, and are VISIBLE at 19:30:00 ; RA/Dec: ( 281.5 , -2.6 )
+The Alt/Az coordinates, with Azimuth 230.123 and Altitude 33.758, are in range, and are VISIBLE at 19:30:00 ; RA/Dec: ( 286.0 , 6.2833 )
+The Alt/Az coordinates, with Azimuth 230.383 and Altitude 43.760, are in range, and are VISIBLE at 19:30:00 ; RA/Dec: ( 290.75 , 15.1333 )
+The Alt/Az coordinates, with Azimuth 230.972 and Altitude 53.689, are in range, and are VISIBLE at 19:30:00 ; RA/Dec: ( 295.75 , 23.8833 )
+The Alt/Az coordinates, with Azimuth 231.478 and Altitude 63.735, are in range, and are VISIBLE at 19:30:00 ; RA/Dec: ( 301.75 , 32.4333 )
+The Alt/Az coordinates, with Azimuth 233.058 and Altitude 73.669, are in range, and are VISIBLE at 19:30:00 ; RA/Dec: ( 308.75 , 40.65 )
+The Alt/Az coordinates, with Azimuth 237.939 and Altitude 83.734, are in NOT in range at 19:30:00 ; RA/Dec: ( 318.0 , 48.3167 )
+The Alt/Az coordinates, with Azimuth 35.679 and Altitude 86.084, are in NOT in range at 19:30:00 ; RA/Dec: ( 330.0 , 55.0333 )
+The Alt/Az coordinates, with Azimuth 45.478 and Altitude 76.215, are in range, and are VISIBLE at 19:30:00 ; RA/Dec: ( 346.0 , 60.15 )
+The Alt/Az coordinates, with Azimuth 47.250 and Altitude 66.259, are in range, and are VISIBLE at 19:30:00 ; RA/Dec: ( 6.25 , 62.7167 )
+The Alt/Az coordinates, with Azimuth 48.000 and Altitude 56.206, are in range, and are VISIBLE at 19:30:00 ; RA/Dec: ( 28.0 , 62.0333 )
+The Alt/Az coordinates, with Azimuth 48.451 and Altitude 46.199, are in range, and are VISIBLE at 19:30:00 ; RA/Dec: ( 46.75 , 58.2833 )
+The Alt/Az coordinates, with Azimuth 48.763 and Altitude 36.232, are in range, and are VISIBLE at 19:30:00 ; RA/Dec: ( 61.0 , 52.4167 )
+The Alt/Az coordinates, with Azimuth 49.081 and Altitude 26.286, are in range, and are VISIBLE at 19:30:00 ; RA/Dec: ( 71.5 , 45.2333 )
+The Alt/Az coordinates, with Azimuth 49.209 and Altitude 16.229, are in NOT in range at 19:30:00 ; RA/Dec: ( 79.75 , 37.3 )
+The Alt/Az coordinates, with Azimuth 49.405 and Altitude 6.257, are in NOT in range at 19:30:00 ; RA/Dec: ( 86.25 , 28.9333 )
+The Alt/Az coordinates, with Azimuth 49.611 and Altitude -3.728, are in NOT in range at 19:30:00 ; RA/Dec: ( 91.75 , 20.2833 )
+The Alt/Az coordinates, with Azimuth 49.740 and Altitude -13.752, are in NOT in range at 19:30:00 ; RA/Dec: ( 96.75 , 11.4833 )
+The Alt/Az coordinates, with Azimuth 49.830 and Altitude -23.805, are in NOT in range at 19:30:00 ; RA/Dec: ( 101.5 , 2.6 )
+The Alt/Az coordinates, with Azimuth 50.116 and Altitude -33.756, are in NOT in range at 19:30:00 ; RA/Dec: ( 106.0 , -6.2833 )
+The Alt/Az coordinates, with Azimuth 50.375 and Altitude -43.756, are in NOT in range at 19:30:00 ; RA/Dec: ( 110.75 , -15.1333 )
+The Alt/Az coordinates, with Azimuth 50.963 and Altitude -53.683, are in NOT in range at 19:30:00 ; RA/Dec: ( 115.75 , -23.8833 )
 ```
 
 ----> Note that each Alt/Az coord above is listed in the same order as the RA/Dec values at the top of this file (which, in turn, was 'read' from [this file](https://github.com/ciroqn/ARROW_project/blob/main/gal_coords_targets.csv)).
