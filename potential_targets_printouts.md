@@ -94,3 +94,43 @@ Length: 23, dtype: object
 
 [('18h27m00s', '-11d29m00s'), ('18h46m00s', '-02d36m00s'), ('19h04m00s', '+06d17m00s'), ('19h23m00s', '+15d08m00s'), ('19h43m00s', '+23d53m00s'), ('20h07m00s', '+32d26m00s'), ('20h35m00s', '+40d39m00s'), ('21h12m00s', '+48d19m00s'), ('22h00m00s', '+55d02m00s'), ('23h04m00s', '+60d09m00s'), ('00h25m00s', '+62d43m00s'), ('01h52m00s', '+62d02m00s'), ('03h07m00s', '+58d17m00s'), ('04h04m00s', '+52d25m00s'), ('04h46m00s', '+45d14m00s'), ('05h19m00s', '+37d18m00s'), ('05h45m00s', '+28d56m00s'), ('06h07m00s', '+20d17m00s'), ('06h27m00s', '+11d29m00s'), ('06h46m00s', '+02d36m00s'), ('07h04m00s', '-06d17m00s'), ('07h23m00s', '-15d08m00s'), ('07h43m00s', '-23d53m00s')]
 ```
+
+```py
+# Create a list of SkyCoord() constructors for each RA/Dec set in 'radec_sets':
+
+skycoord_gal_list = []
+for coord in radec_sets:
+    skycoord_gal_list.append(SkyCoord(coord[0], coord[1]))
+print(skycoord_gal_list)
+```
+
+```
+----> The 'skycoord_gal_list' list, containing the SkyCoord constructors for each RA/Dec set. This is now ripe for conversion to Alt/Az, once we have
+----> established the date/time string using Time() and the location of our observation, ARROW, using EarthLocation(), and then combining this information
+----> in AltAz() constuctor
+
+[<SkyCoord (ICRS): (ra, dec) in deg
+    (276.75, -11.48333333)>, <SkyCoord (ICRS): (ra, dec) in deg
+    (281.5, -2.6)>, <SkyCoord (ICRS): (ra, dec) in deg
+    (286., 6.28333333)>, <SkyCoord (ICRS): (ra, dec) in deg
+    (290.75, 15.13333333)>, <SkyCoord (ICRS): (ra, dec) in deg
+    (295.75, 23.88333333)>, <SkyCoord (ICRS): (ra, dec) in deg
+    (301.75, 32.43333333)>, <SkyCoord (ICRS): (ra, dec) in deg
+    (308.75, 40.65)>, <SkyCoord (ICRS): (ra, dec) in deg
+    (318., 48.31666667)>, <SkyCoord (ICRS): (ra, dec) in deg
+    (330., 55.03333333)>, <SkyCoord (ICRS): (ra, dec) in deg
+    (346., 60.15)>, <SkyCoord (ICRS): (ra, dec) in deg
+    (6.25, 62.71666667)>, <SkyCoord (ICRS): (ra, dec) in deg
+    (28., 62.03333333)>, <SkyCoord (ICRS): (ra, dec) in deg
+    (46.75, 58.28333333)>, <SkyCoord (ICRS): (ra, dec) in deg
+    (61., 52.41666667)>, <SkyCoord (ICRS): (ra, dec) in deg
+    (71.5, 45.23333333)>, <SkyCoord (ICRS): (ra, dec) in deg
+    (79.75, 37.3)>, <SkyCoord (ICRS): (ra, dec) in deg
+    (86.25, 28.93333333)>, <SkyCoord (ICRS): (ra, dec) in deg
+    (91.75, 20.28333333)>, <SkyCoord (ICRS): (ra, dec) in deg
+    (96.75, 11.48333333)>, <SkyCoord (ICRS): (ra, dec) in deg
+    (101.5, 2.6)>, <SkyCoord (ICRS): (ra, dec) in deg
+    (106., -6.28333333)>, <SkyCoord (ICRS): (ra, dec) in deg
+    (110.75, -15.13333333)>, <SkyCoord (ICRS): (ra, dec) in deg
+    (115.75, -23.88333333)>]
+    ```
