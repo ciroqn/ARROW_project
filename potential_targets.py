@@ -1,6 +1,8 @@
 # Open the .csv file, which contains data of potential targets from Table 4.1 (mod. website). This prints out the table in basic format, showing the RA/Dec of 
 # potential targets (as well as the Galactic longitudes)
 
+# <------------------------------------------------------ SECTION 1: ACCESSING RA/DEC DATA FROM TABLE 4.1 ------------------------------------------------>
+
 with open('gal_coords_targets.csv', mode='r') as galactic_coords:
     read_file = galactic_coords.read()
     print(read_file)
@@ -41,6 +43,8 @@ print(radec_targets)                                       # The zip() function 
 radec_sets = list(radec_targets)
 print(radec_sets)
 
+# <------------------------------------------- SECTION 2: RA/DEC TO ALT/AZ - CHECKING IF COORDS IN RANGE ------------------------------------------->
+
 
 # Now for the second part, which is using 'astropy' to select our location, observation time, and conver the RA/Dec values to Alt/Az. By doing this, we can see
 # what will be visible in the sky at a particular observation at a particular time (in this case ARROW in Milton Keynes, starting at 19:20:00 on 4/11/21
@@ -63,9 +67,11 @@ print(skycoord_gal_list)
 # Now we have the SkyCoord() constructors for each RA/Dec value in 'radec_sets', the Alt/Az constructor now needs to be put in place. It takes two arguments:
 # the date and time strings (in a specific format - according to 'isot') and the location of observation (ARROW). They are defined below:
 
+# <------------------------------------- INPUT TIME FOR 't_str' TO SEE EFFECT ON ALT/AZ COORDS ---------------------------------------->
+
 # First set up the time and date strings for our location (ARROW in Milton Keynes).
 
-t_str = '19:20:00
+t_str = '19:20:00'
 
 dt_string = '2021-11-04T' + t_str
 
