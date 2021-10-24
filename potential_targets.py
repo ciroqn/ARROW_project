@@ -52,4 +52,10 @@ from astropy import units as u
 from astropy.coordinates import SkyCoord, EarthLocation, AltAz
 from astropy.time import Time
                  
+# We need SkyCoord() constructors for *each* RA/Dec set in 'radec_sets' in order to convert this to Alt/Az. First, an empty list is established, to which
+# we append each SkyCoord of RA/Dec coord sets.
 
+skycoord_gal_list = []
+for coord in radec_sets:
+    skycoord_gal_list.append(SkyCoord(coord[0], coord[1])).  # Where coord[0] gives the RA, and coord[1] gives Dec values
+print(skycoord_gal_list)
