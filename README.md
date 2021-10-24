@@ -1,5 +1,10 @@
 # Using the ARROW Radio Telescope to map the Galaxy
 
+Content:
+  - File containing potential targets (along Galactic plane): [Potential Coordinates](https://github.com/ciroqn/ARROW_project/blob/main/potential_targets.py)
+  - Visible Targets at Start of Session: [Alt/Az Potential Targets](https://github.com/ciroqn/ARROW_project/blob/main/potential_targets.py)
+  - Tracking a Target (Input time string and potential target): [Track Target](https://github.com/ciroqn/ARROW_project/blob/main/select_coords_tracking.py)
+
 ## Aim of ARROW Project
 ARROW is a radio telescope, so it can, luckily, detect signals whatever the weather (but, of course, any vibrations from the surrounding environment could have an impact). ARROW specifically **detects 21 cm radiowaves** from the abundance of hydrogen gas in the outer arms of our galaxy and the wider Galactic plane. By utilising the Doppler shift of these emissions, one can determine the speeds of the clouds of hydrogen gas. In turn, a rotation curve can be constructed from this (note that the velocity of this gas may have components in three directions). From this, the mass can be estimated.
 
