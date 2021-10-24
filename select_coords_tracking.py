@@ -7,7 +7,7 @@ from astropy.time import Time
 
 # Date and time of observation. The time can be changed so the changing Alt/Az can be monitored.
 
-time_string = '19:20:00'
+time_string = input('Please input time in format XX:XX:XX ')
 
 dt_string = '2021-11-04T' + time_string   # <---- Time can be changed 
 
@@ -19,9 +19,12 @@ obs_time = Time(dt_string, format='isot', scale='utc')
 
 arrow = EarthLocation(lat=52.024444*u.deg, lon=-0.706388*u.deg, height=114*u.m)
 
-# Random RA/Dec (potential target) in SkyCoord() constructor
+# Random RA/Dec (potential target) in SkyCoord() constructor (In Jupyter, this line and below should be put in a separate cell to the above):
 
-potential_target = SkyCoord('19h04m00s', '06d17m00s')       # <---- this can be changed also to track targets
+RA = input('Please enter a RA value in format XXhXXm00s ')
+DEC = input('Please enter a DEC value in format +/-XXdXXm00s ')
+
+potential_target = SkyCoord(RA, DEC)       # <---- this can be changed also to track targets
 
 # Create AltAz observation frame
 
