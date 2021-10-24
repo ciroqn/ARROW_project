@@ -163,7 +163,8 @@ print(altaz_coords)
 ```
 
 ```
-----> Looping through the 'skycoord_gal_list' list and converted each to Alt/Az. The print() gives the following rather dense list. We only need to worry about the ----> (az, alt) at the end of each SkyCoord AltAz object:
+----> Looping through the 'skycoord_gal_list' list and converted each to Alt/Az. The print() gives the following rather dense list. We only need to worry about the
+----> (az, alt) at the end of each SkyCoord AltAz object:
 
 [<SkyCoord (AltAz: obstime=2021-11-04T19:20:00.000, location=(3932588.11129261, -48486.53479912, 5004567.24279243) m, pressure=0.0 hPa, temperature=0.0 deg_C, relative_humidity=0.0, obswl=1.0 micron): (az, alt) in deg
     (236.11963956, 10.14257307)>, <SkyCoord (AltAz: obstime=2021-11-04T19:20:00.000, location=(3932588.11129261, -48486.53479912, 5004567.24279243) m, pressure=0.0 hPa, temperature=0.0 deg_C, relative_humidity=0.0, obswl=1.0 micron): (az, alt) in deg
