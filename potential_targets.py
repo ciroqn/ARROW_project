@@ -61,7 +61,7 @@ from astropy.time import Time
 
 skycoord_gal_list = []
 for coord in radec_sets:
-    skycoord_gal_list.append(SkyCoord(coord[0], coord[1])).  # Where coord[0] gives the RA, and coord[1] gives Dec values
+    skycoord_gal_list.append(SkyCoord(coord[0], coord[1]))  # Where coord[0] gives the RA, and coord[1] gives Dec values
 print(skycoord_gal_list)
 
 # Now we have the SkyCoord() constructors for each RA/Dec value in 'radec_sets', the Alt/Az constructor now needs to be put in place. It takes two arguments:
