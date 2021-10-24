@@ -17,4 +17,14 @@ obs_time = Time(dt_string, format='isot', scale='utc')
 
 arrow = EarthLocation(lat=52.024444*u.deg, lon=-0.706388*u.deg, height=114*u.m)
 
-# 
+# Random RA/Dec (potential target) in SkyCoord() constructor
+
+potential_target = SkyCoord('19h04m00s', '06d17m00s')
+
+# Create AltAz observation frame
+
+altaz_obsframe = AltAz(obstime=obs_time, location=arrow)
+
+# Convert potential target to AltAz frame
+
+altaz_coords = potential_target.transform_to(altaz_obsframe)
