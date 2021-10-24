@@ -72,12 +72,13 @@ print(radec_sets)
 ```
 
 ```
-The first array shows the 'stripped' RA values (accessed through df['RA'])
+----> The first array shows the 'stripped' RA values (accessed through df['RA'])
 
 ['18h27m00s', '18h46m00s', '19h04m00s', '19h23m00s', '19h43m00s', '20h07m00s', '20h35m00s', '21h12m00s', '22h00m00s', '23h04m00s', '00h25m00s', '01h52m00s', '03h07m00s', '04h04m00s', '04h46m00s', '05h19m00s', '05h45m00s', '06h07m00s', '06h27m00s', '06h46m00s', '07h04m00s', '07h23m00s', '07h43m00s']
 <PandasArray>
 
-The second array shows the Dec values (accessed through df['DEC'])
+----> The second array shows the Dec values (accessed through df['DEC'])
+
 ['-11d29m00s', '-02d36m00s', '+06d17m00s', '+15d08m00s', '+23d53m00s',
  '+32d26m00s', '+40d39m00s', '+48d19m00s', '+55d02m00s', '+60d09m00s',
  '+62d43m00s', '+62d02m00s', '+58d17m00s', '+52d25m00s', '+45d14m00s',
@@ -85,11 +86,11 @@ The second array shows the Dec values (accessed through df['DEC'])
  '-06d17m00s', '-15d08m00s', '-23d53m00s']
 Length: 23, dtype: object
 
-# This is the zip object, whose action combined the RA and Dec values, respectively. It needs to be converted to a list.
+----> This is the zip object, whose action combined the RA and Dec values, respectively. It needs to be converted to a list.
 
 <zip object at 0x7f93fa955f50>
 
-# Converting to a list gives:
+----> Converting to a list gives:
 
 [('18h27m00s', '-11d29m00s'), ('18h46m00s', '-02d36m00s'), ('19h04m00s', '+06d17m00s'), ('19h23m00s', '+15d08m00s'), ('19h43m00s', '+23d53m00s'), ('20h07m00s', '+32d26m00s'), ('20h35m00s', '+40d39m00s'), ('21h12m00s', '+48d19m00s'), ('22h00m00s', '+55d02m00s'), ('23h04m00s', '+60d09m00s'), ('00h25m00s', '+62d43m00s'), ('01h52m00s', '+62d02m00s'), ('03h07m00s', '+58d17m00s'), ('04h04m00s', '+52d25m00s'), ('04h46m00s', '+45d14m00s'), ('05h19m00s', '+37d18m00s'), ('05h45m00s', '+28d56m00s'), ('06h07m00s', '+20d17m00s'), ('06h27m00s', '+11d29m00s'), ('06h46m00s', '+02d36m00s'), ('07h04m00s', '-06d17m00s'), ('07h23m00s', '-15d08m00s'), ('07h43m00s', '-23d53m00s')]
 ```
