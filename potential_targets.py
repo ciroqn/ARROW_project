@@ -65,7 +65,9 @@ print(skycoord_gal_list)
 
 # First set up the time and date strings for our location (ARROW in Milton Keynes).
 
-dt_string = '2021-11-04T19:20:00'
+t_str = '19:20:00
+
+dt_string = '2021-11-04T' + t_str
 
 # Use Time() constructor using necessary formats (including 'isot')
 
@@ -94,6 +96,6 @@ print('\n')
 
 for altaz_set in altaz_coords:
     if int(altaz_set.az.degree) > 20 and int(altaz_set.az.degree) < 340 and int(altaz_set.alt.degree) > 20 and int(altaz_set.alt.degree) < 80:
-        print(f'The Alt/Az coordinates, with Azimuth {altaz_set.az.deg:.3f} and Altitude {altaz_set.alt.deg:.3f}, are in range, and are VISIBLE.')
+        print(f'The Alt/Az coordinates, with Azimuth {altaz_set.az.deg:.3f} and Altitude {altaz_set.alt.deg:.3f}, are in range, and are VISIBLE at', t_str)
     else:
-        print(f'The Alt/Az coordinates, with Azimuth {altaz_set.az.deg:.3f} and Altitude {altaz_set.alt.deg:.3f}, are in NOT in range.')
+        print(f'The Alt/Az coordinates, with Azimuth {altaz_set.az.deg:.3f} and Altitude {altaz_set.alt.deg:.3f}, are in NOT in range at', t_str)
