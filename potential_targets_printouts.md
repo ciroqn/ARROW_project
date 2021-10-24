@@ -133,4 +133,58 @@ print(skycoord_gal_list)
     (106., -6.28333333)>, <SkyCoord (ICRS): (ra, dec) in deg
     (110.75, -15.13333333)>, <SkyCoord (ICRS): (ra, dec) in deg
     (115.75, -23.88333333)>]
-    ```
+```
+
+```py
+# First set up the time and date strings for our location (PIRATE in Tenerife, in this case).
+
+dt_string = '2021-11-04T19:20:00'
+
+# Use Time() constructor using necessary formats (including 'isot')
+
+obs_time = Time(dt_string, format='isot', scale='utc')
+
+# Now for setting up ARROW's location using EarthLocation() constructor (we need three values: latitude, longitude and height)
+
+arrow = EarthLocation(lat=52.024444*u.deg, lon=-0.706388*u.deg, height=114*u.m)
+
+# Now that we have established the Time() (date and time we observe) and EarthLocation() (for ARROW) constructors, the Alt/Az can be established:
+
+obs_altaz_frame = AltAz(obstime=obs_time, location=arrow)
+
+# Now to convert this to the AltAz coords using our frame defined by the AltAz constructor:
+
+altaz_coords = []
+for radec_coords in skycoord_gal_list:
+    altaz_coords.append(radec_coords.transform_to(obs_altaz_frame))
+print(altaz_coords)
+```
+
+```
+----> Looping through the 'skycoord_gal_list' list and converted each to Alt/Az. The print() gives the following rather dense list. We only need to worry about the ----> (az, alt) at the end of each SkyCoord AltAz object:
+
+[<SkyCoord (AltAz: obstime=2021-11-04T19:20:00.000, location=(3932588.11129261, -48486.53479912, 5004567.24279243) m, pressure=0.0 hPa, temperature=0.0 deg_C, relative_humidity=0.0, obswl=1.0 micron): (az, alt) in deg
+    (236.11963956, 10.14257307)>, <SkyCoord (AltAz: obstime=2021-11-04T19:20:00.000, location=(3932588.11129261, -48486.53479912, 5004567.24279243) m, pressure=0.0 hPa, temperature=0.0 deg_C, relative_humidity=0.0, obswl=1.0 micron): (az, alt) in deg
+    (236.72464187, 20.18083286)>, <SkyCoord (AltAz: obstime=2021-11-04T19:20:00.000, location=(3932588.11129261, -48486.53479912, 5004567.24279243) m, pressure=0.0 hPa, temperature=0.0 deg_C, relative_humidity=0.0, obswl=1.0 micron): (az, alt) in deg
+    (237.58257433, 30.10642749)>, <SkyCoord (AltAz: obstime=2021-11-04T19:20:00.000, location=(3932588.11129261, -48486.53479912, 5004567.24279243) m, pressure=0.0 hPa, temperature=0.0 deg_C, relative_humidity=0.0, obswl=1.0 micron): (az, alt) in deg
+    (238.54068378, 40.07952559)>, <SkyCoord (AltAz: obstime=2021-11-04T19:20:00.000, location=(3932588.11129261, -48486.53479912, 5004567.24279243) m, pressure=0.0 hPa, temperature=0.0 deg_C, relative_humidity=0.0, obswl=1.0 micron): (az, alt) in deg
+    (240.02841708, 49.96048071)>, <SkyCoord (AltAz: obstime=2021-11-04T19:20:00.000, location=(3932588.11129261, -48486.53479912, 5004567.24279243) m, pressure=0.0 hPa, temperature=0.0 deg_C, relative_humidity=0.0, obswl=1.0 micron): (az, alt) in deg
+    (241.9163068, 59.9526151)>, <SkyCoord (AltAz: obstime=2021-11-04T19:20:00.000, location=(3932588.11129261, -48486.53479912, 5004567.24279243) m, pressure=0.0 hPa, temperature=0.0 deg_C, relative_humidity=0.0, obswl=1.0 micron): (az, alt) in deg
+    (245.82136396, 69.76810783)>, <SkyCoord (AltAz: obstime=2021-11-04T19:20:00.000, location=(3932588.11129261, -48486.53479912, 5004567.24279243) m, pressure=0.0 hPa, temperature=0.0 deg_C, relative_humidity=0.0, obswl=1.0 micron): (az, alt) in deg
+    (255.84491781, 79.55198047)>, <SkyCoord (AltAz: obstime=2021-11-04T19:20:00.000, location=(3932588.11129261, -48486.53479912, 5004567.24279243) m, pressure=0.0 hPa, temperature=0.0 deg_C, relative_humidity=0.0, obswl=1.0 micron): (az, alt) in deg
+    (328.7659132, 86.30166479)>, <SkyCoord (AltAz: obstime=2021-11-04T19:20:00.000, location=(3932588.11129261, -48486.53479912, 5004567.24279243) m, pressure=0.0 hPa, temperature=0.0 deg_C, relative_humidity=0.0, obswl=1.0 micron): (az, alt) in deg
+    (35.44207671, 79.17783973)>, <SkyCoord (AltAz: obstime=2021-11-04T19:20:00.000, location=(3932588.11129261, -48486.53479912, 5004567.24279243) m, pressure=0.0 hPa, temperature=0.0 deg_C, relative_humidity=0.0, obswl=1.0 micron): (az, alt) in deg
+    (45.34363721, 69.53544517)>, <SkyCoord (AltAz: obstime=2021-11-04T19:20:00.000, location=(3932588.11129261, -48486.53479912, 5004567.24279243) m, pressure=0.0 hPa, temperature=0.0 deg_C, relative_humidity=0.0, obswl=1.0 micron): (az, alt) in deg
+    (49.01636313, 59.5954018)>, <SkyCoord (AltAz: obstime=2021-11-04T19:20:00.000, location=(3932588.11129261, -48486.53479912, 5004567.24279243) m, pressure=0.0 hPa, temperature=0.0 deg_C, relative_humidity=0.0, obswl=1.0 micron): (az, alt) in deg
+    (51.00791096, 49.65026941)>, <SkyCoord (AltAz: obstime=2021-11-04T19:20:00.000, location=(3932588.11129261, -48486.53479912, 5004567.24279243) m, pressure=0.0 hPa, temperature=0.0 deg_C, relative_humidity=0.0, obswl=1.0 micron): (az, alt) in deg
+    (52.31452592, 39.72287307)>, <SkyCoord (AltAz: obstime=2021-11-04T19:20:00.000, location=(3932588.11129261, -48486.53479912, 5004567.24279243) m, pressure=0.0 hPa, temperature=0.0 deg_C, relative_humidity=0.0, obswl=1.0 micron): (az, alt) in deg
+    (53.36704884, 29.81070944)>, <SkyCoord (AltAz: obstime=2021-11-04T19:20:00.000, location=(3932588.11129261, -48486.53479912, 5004567.24279243) m, pressure=0.0 hPa, temperature=0.0 deg_C, relative_humidity=0.0, obswl=1.0 micron): (az, alt) in deg
+    (54.09243708, 19.77499071)>, <SkyCoord (AltAz: obstime=2021-11-04T19:20:00.000, location=(3932588.11129261, -48486.53479912, 5004567.24279243) m, pressure=0.0 hPa, temperature=0.0 deg_C, relative_humidity=0.0, obswl=1.0 micron): (az, alt) in deg
+    (54.80809584, 9.82411735)>, <SkyCoord (AltAz: obstime=2021-11-04T19:20:00.000, location=(3932588.11129261, -48486.53479912, 5004567.24279243) m, pressure=0.0 hPa, temperature=0.0 deg_C, relative_humidity=0.0, obswl=1.0 micron): (az, alt) in deg
+    (55.49918881, -0.13875604)>, <SkyCoord (AltAz: obstime=2021-11-04T19:20:00.000, location=(3932588.11129261, -48486.53479912, 5004567.24279243) m, pressure=0.0 hPa, temperature=0.0 deg_C, relative_humidity=0.0, obswl=1.0 micron): (az, alt) in deg
+    (56.11290284, -10.14483019)>, <SkyCoord (AltAz: obstime=2021-11-04T19:20:00.000, location=(3932588.11129261, -48486.53479912, 5004567.24279243) m, pressure=0.0 hPa, temperature=0.0 deg_C, relative_humidity=0.0, obswl=1.0 micron): (az, alt) in deg
+    (56.7174801, -20.18148703)>, <SkyCoord (AltAz: obstime=2021-11-04T19:20:00.000, location=(3932588.11129261, -48486.53479912, 5004567.24279243) m, pressure=0.0 hPa, temperature=0.0 deg_C, relative_humidity=0.0, obswl=1.0 micron): (az, alt) in deg
+    (57.57465713, -30.10551547)>, <SkyCoord (AltAz: obstime=2021-11-04T19:20:00.000, location=(3932588.11129261, -48486.53479912, 5004567.24279243) m, pressure=0.0 hPa, temperature=0.0 deg_C, relative_humidity=0.0, obswl=1.0 micron): (az, alt) in deg
+    (58.53154962, -40.07710665)>, <SkyCoord (AltAz: obstime=2021-11-04T19:20:00.000, location=(3932588.11129261, -48486.53479912, 5004567.24279243) m, pressure=0.0 hPa, temperature=0.0 deg_C, relative_humidity=0.0, obswl=1.0 micron): (az, alt) in deg
+    (60.01722164, -49.95672415)>]
+```
