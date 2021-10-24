@@ -196,11 +196,13 @@ print(altaz_coords)
 # Finally, we loop through each AltAz coord set and determine if it's visible at our observation time and date (and location) using 
 # 'f-strings' for neat formatting. Note the int() to convert the string to an integer in the 'if' statement:
 
+count = 0
 for altaz_set in altaz_coords:
     if int(altaz_set.az.degree) > 20 and int(altaz_set.az.degree) < 340 and int(altaz_set.alt.degree) > 20 and int(altaz_set.alt.degree) < 80:
-        print(f'The Alt/Az coordinates, with Azimuth {altaz_set.az.deg:.3f} and Altitude {altaz_set.alt.deg:.3f}, are in range, and are VISIBLE at', t_str)
+        print(f'The Alt/Az coordinates, with Azimuth {altaz_set.az.deg:.3f} and Altitude {altaz_set.alt.deg:.3f}, are in range, and are VISIBLE at', t_str, '; RA/Dec: (', round(skycoord_gal_list[count].ra.deg, 4), ',', round(skycoord_gal_list[count].dec.deg, 4),')')
     else:
-        print(f'The Alt/Az coordinates, with Azimuth {altaz_set.az.deg:.3f} and Altitude {altaz_set.alt.deg:.3f}, are in NOT in range at', t_str)
+        print(f'The Alt/Az coordinates, with Azimuth {altaz_set.az.deg:.3f} and Altitude {altaz_set.alt.deg:.3f}, are in NOT in range at', t_str, '; RA/Dec: (', round(skycoord_gal_list[count].ra.deg, 4), ',', round(skycoord_gal_list[count].dec.deg, 4),')')
+    count += 1 
 ```
 
 ```
