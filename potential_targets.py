@@ -98,6 +98,8 @@ print(altaz_coords)
 
 print('\n')
 
+# <-------------------------- CONDITIONAL STATEMENTS WITHIN 'FOR' LOOP TO FILTER OUT ALT/AZ COORDS THAT ARE NOT IN ARROW'S RANGE ----------------------------->
+
 # Determine visibility according to the angles that are restricted due to ARROW's hardware limitations:
 
 count = 0
@@ -108,6 +110,7 @@ for altaz_set in altaz_coords:
         print(f'The Alt/Az coordinates, with Azimuth {altaz_set.az.deg:.3f} and Altitude {altaz_set.alt.deg:.3f}, are in NOT in range at', t_str, '; RA/Dec: (', round(skycoord_gal_list[count].ra.deg, 4), ',', round(skycoord_gal_list[count].dec.deg, 4),')')
     count += 1
     
+# <-------------------------- ALTERNATIVE FORMAT FOR RA/DEC IN CONDITIONAL STATEMENT, BUT 'SAME' OUTPUT AS ABOVE ------------------------------->
 # Alternatively, for a different RA/DEC format in the print() statements in the conditional statement above, we can access the data directly from the .csv file that was 
 # defined earlier in the file. So instead of the RA/DEC in degrees, they are in h:m:s and d:m:s, respecitvely:
 
