@@ -1,6 +1,14 @@
 # These are the terminal printouts from the [potential_targets.py](https://github.com/ciroqn/ARROW_project/blob/main/potential_targets.py) to give a visual check (it can also be done in Jupyter Notebook)
 
 ```py
+import pandas as pd
+import numpy as np
+
+from astropy import constants as c
+from astropy import units as u
+from astropy.coordinates import SkyCoord, EarthLocation, AltAz
+from astropy.time import Time
+
 # Open the .csv file, which contains data of potential targets from Table 4.1 (mod. website)
 
 with open('gal_coords_targets.csv', mode='r') as galactic_coords:
@@ -35,3 +43,5 @@ l,RA,DEC
 230,07h23m00s,-15d08m00s
 240,07h43m00s,-23d53m00s
 ```
+
+
