@@ -59,3 +59,41 @@ skycoord_gal_list = []
 for coord in radec_sets:
     skycoord_gal_list.append(SkyCoord(coord[0], coord[1])).  # Where coord[0] gives the RA, and coord[1] gives Dec values
 print(skycoord_gal_list)
+
+# Now we have the SkyCoord() constructors for each RA/Dec value in 'radec_sets', the Alt/Az constructor now needs to be put in place. It takes two arguments:
+# the date and time strings (in a specific format - according to 'isot') and the location of observation (ARROW). They are defined below:
+
+# First set up the time and date strings for our location (ARROW in Milton Keynes).
+
+dt_string = '2021-11-04T19:20:00'
+
+# Use Time() constructor using necessary formats (including 'isot')
+
+obs_time = Time(dt_string, format='isot', scale='utc')
+
+# Now for setting up ARROW's location using EarthLocation() constructor (we need three values: latitude, longitude and height)
+
+arrow = EarthLocation(lat=52.024444*u.deg, lon=-0.706388*u.deg, height=114*u.m)
+
+# Now that we have established the Time() (date and time we observe) and EarthLocation() (for ARROW) constructors, the Alt/Az can be established:
+
+obs_altaz_frame = AltAz(obstime=obs_time, location=arrow)
+
+# Now to convert this to the AltAz coords using our frame defined by the AltAz constructor:
+
+altaz_coords = []
+for radec_coords in skycoord_gal_list:
+    altaz_coords.append(radec_coords.transform_to(obs_altaz_frame))
+print(altaz_coords)
+
+# The above printout shows a list of Alt/Az coordinates
+
+print('\n')
+
+# Determine visibility according to the angles that are restricted due to ARROW's hardware limitations:
+
+for altaz_set in altaz_coords:
+    if int(altaz_set.az.degree) > 20 and int(altaz_set.az.degree) < 340 and int(altaz_set.alt.degree) > 20 and int(altaz_set.alt.degree) < 80:
+        print(f'The Alt/Az coordinates, with Azimuth {altaz_set.az.deg:.3f} and Altitude {altaz_set.alt.deg:.3f}, are in range, and are VISIBLE.')
+    else:
+        print(f'The Alt/Az coordinates, with Azimuth {altaz_set.az.deg:.3f} and Altitude {altaz_set.alt.deg:.3f}, are in NOT in range.')
