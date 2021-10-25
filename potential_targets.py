@@ -1,3 +1,5 @@
+
+
 # Open the .csv file, which contains data of potential targets from Table 4.1 (mod. website). This prints out the table in basic format, showing the RA/Dec of 
 # potential targets (as well as the Galactic longitudes)
 
@@ -121,3 +123,6 @@ for altaz_set in altaz_coords:
     else:
         print(f'The Alt/Az coordinates, with Azimuth {altaz_set.az.deg:.3f} and Altitude {altaz_set.alt.deg:.3f}, are in NOT in range at', t_str, '; RA/Dec: (', df['RA'][count], ',', df['DEC'][count],'); (l =', df['l'][count] ,')')
     count += 1
+    
+    
+    
