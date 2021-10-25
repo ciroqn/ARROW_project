@@ -105,9 +105,9 @@ print('\n')
 count = 0
 for altaz_set in altaz_coords:
     if int(altaz_set.az.degree) > 20 and int(altaz_set.az.degree) < 340 and int(altaz_set.alt.degree) > 20 and int(altaz_set.alt.degree) < 80:
-        print(f'The Alt/Az coordinates, with Azimuth {altaz_set.az.deg:.3f} and Altitude {altaz_set.alt.deg:.3f}, are in range, and are VISIBLE at', t_str, '; RA/Dec: (', round(skycoord_gal_list[count].ra.deg, 4), ',', round(skycoord_gal_list[count].dec.deg, 4),')')
+        print(f'The Alt/Az coordinates, with Azimuth {altaz_set.az.deg:.3f} and Altitude {altaz_set.alt.deg:.3f}, are in range, and are VISIBLE at', t_str, '; RA/Dec: (', round(skycoord_gal_list[count].ra.deg, 4), ',', round(skycoord_gal_list[count].dec.deg, 4),'); (l =', df['l'][count] ,')')
     else:
-        print(f'The Alt/Az coordinates, with Azimuth {altaz_set.az.deg:.3f} and Altitude {altaz_set.alt.deg:.3f}, are in NOT in range at', t_str, '; RA/Dec: (', round(skycoord_gal_list[count].ra.deg, 4), ',', round(skycoord_gal_list[count].dec.deg, 4),')')
+        print(f'The Alt/Az coordinates, with Azimuth {altaz_set.az.deg:.3f} and Altitude {altaz_set.alt.deg:.3f}, are in NOT in range at', t_str, '; RA/Dec: (', round(skycoord_gal_list[count].ra.deg, 4), ',', round(skycoord_gal_list[count].dec.deg, 4),'); (l =', df['l'][count] ,')')
     count += 1
     
 # <-------------------------- ALTERNATIVE FORMAT FOR RA/DEC IN CONDITIONAL STATEMENT, BUT 'SAME' OUTPUT AS ABOVE ------------------------------->
@@ -117,7 +117,7 @@ for altaz_set in altaz_coords:
 count = 0
 for altaz_set in altaz_coords:
     if int(altaz_set.az.degree) > 20 and int(altaz_set.az.degree) < 340 and int(altaz_set.alt.degree) > 20 and int(altaz_set.alt.degree) < 80:
-        print(f'The Alt/Az coordinates, with Azimuth {altaz_set.az.deg:.3f} and Altitude {altaz_set.alt.deg:.3f}, are in range, and are VISIBLE at', t_str, '; RA/Dec: (', df['RA'][count], ',', df['DEC'][count],')')
+        print(f'The Alt/Az coordinates, with Azimuth {altaz_set.az.deg:.3f} and Altitude {altaz_set.alt.deg:.3f}, are in range, and are VISIBLE at', t_str, '; RA/Dec: (', df['RA'][count], ',', df['DEC'][count],'); (l =', df['l'][count] ,')')
     else:
-        print(f'The Alt/Az coordinates, with Azimuth {altaz_set.az.deg:.3f} and Altitude {altaz_set.alt.deg:.3f}, are in NOT in range at', t_str, '; RA/Dec: (', df['RA'][count], ',', df['DEC'][count],')')
+        print(f'The Alt/Az coordinates, with Azimuth {altaz_set.az.deg:.3f} and Altitude {altaz_set.alt.deg:.3f}, are in NOT in range at', t_str, '; RA/Dec: (', df['RA'][count], ',', df['DEC'][count],'); (l =', df['l'][count] ,')')
     count += 1
