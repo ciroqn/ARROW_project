@@ -16,7 +16,8 @@ obs_time = Time(dt_string, format='isot', scale='utc')
 
 arrow = EarthLocation(lat=52.024444*u.deg, lon=-0.706388*u.deg, height=114*u.m)
 
-# Random RA/Dec (potential target) in SkyCoord() constructor (In Jupyter, this line and below should be put in a separate cell to the above):
+# Random RA/Dec (potential target) in SkyCoord() constructor. If using the values from Table 4.1 for RA/Dec, the corresponding Galactic 
+# longitude (l, in deg) can also be noted. (In Jupyter, this line and below should be put in a separate cell to the above):
 
 RA = input('Please enter a RA value in format XXhXXm00s ')
 DEC = input('Please enter a DEC value in format +/-XXdXXm00s ')
