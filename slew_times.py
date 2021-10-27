@@ -30,3 +30,27 @@ slew_time = ang_dist_deg / travel_speed
 
 # Convert to minutes (equal to 4.2 mins)
 print(slew_time.to('min')). 
+
+#<------------------------------ SLEW TIME FROM NEP TO SPECIFIED LONGITUDE-------------------------------->
+
+# Slew time from NEP to first longitude location (in this case l = 50)
+
+lon_50_radec = SkyCoord('19h23m00s',  '+15d08m00s')
+nep_radec = SkyCoord('18h00m00s', '+66d33m00s')
+
+ang_distance1 = nep_radec.separation(lon_50_radec)
+
+ang_dist_deg1 = ang_distance1.deg*u.deg
+
+print(ang_dist_deg1)
+
+print('The angular distance of longitude, 50, and NEP against the sky is', ang_distance)
+
+travel_speed1 = 1/6*(u.deg/u.second)
+
+print(travel_speed1)
+
+slew_time1 = ang_dist_deg1 / travel_speed1
+
+# Equal to 5.3 mins
+print(slew_time1.to('min'))
