@@ -235,7 +235,7 @@ The Alt/Az coordinates, with Azimuth 50.963 and Altitude -53.683, are NOT in ran
 
 ----> Note that each Alt/Az coord above is listed in the same order as the RA/Dec values at the top of this file (which, in turn, was 'read' from [this file](https://github.com/ciroqn/ARROW_project/blob/main/gal_coords_targets.csv)).
 
-----> Alternatively, instead of expressing the RA/DEC in degrees, they could be expressed at h:m:s and d:m:s for the RA and Dec, respectively. In this case, the conidtional statement will look like this:
+----> Alternatively, instead of expressing the RA/DEC in degrees, they could be expressed at `h:m:s` and `d:m:s` for the RA and Dec, respectively. In this case, the conidtional statement will look like this:
 
 ```py
 count = 0
