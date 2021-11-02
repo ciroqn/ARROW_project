@@ -65,7 +65,8 @@ print(ang_dist2)
 
 slew_time2 = ang_dist2 / travel_speed
 
-print(slew_time1.to('min'))
+# Prints ~ 4.5 mins
+print('The approx. time from Park to l = 50 is', slew_time2.to('min'))
 
 #<---------------------------------- SLEW TIME L = 70 TO NEP --------------------------------------->
 
