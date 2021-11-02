@@ -62,3 +62,13 @@ print(ang_dist2)
 slew_time2 = ang_dist2 / travel_speed
 
 print(slew_time1.to('min'))
+
+#<---------------------------------- SLEW TIME L = 70 TO NEP --------------------------------------->
+
+lon_70_radec = SkyCoord('20h07m00s', '+32d26m00s')
+
+ang_dist3 = lon_70_radec.separation(nep_radec)
+
+slew_time3 = ang_dist3 / travel_speed
+
+print('The approx. time from longitude 70 to NEP is ', slew_time3.to('min'))
