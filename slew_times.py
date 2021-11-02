@@ -29,7 +29,7 @@ print(travel_speed)
 slew_time = ang_dist_deg / travel_speed
 
 # Convert to minutes (equal to 4.2 mins)
-print(slew_time.to('min')). 
+print(slew_time.to('min'))
 
 #<------------------------------ SLEW TIME FROM NEP TO SPECIFIED LONGITUDE-------------------------------->
 
