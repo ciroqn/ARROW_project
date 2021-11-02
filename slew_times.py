@@ -46,11 +46,19 @@ print(ang_dist_deg1)
 
 print('The angular distance of longitude, 50, and NEP against the sky is', ang_distance)
 
-travel_speed1 = 1/6*(u.deg/u.second)
-
-print(travel_speed1)
-
-slew_time1 = ang_dist_deg1 / travel_speed1
+slew_time1 = ang_dist_deg1 / travel_speed
 
 # Equal to 5.3 mins
+print(slew_time1.to('min'))
+
+#<---------------------------------- SLEW TIME FROM PARK TO L = 50 --------------------------------------->
+
+park_radec_1920 = SkyCoord('22h14m00s', '+40d29m00s') # approx RA/Dec for park at ~1920
+
+ang_dist2 = park_radec_1920.separation(lon_50_radec)
+
+print(ang_dist2)
+
+slew_time2 = ang_dist2 / travel_speed
+
 print(slew_time1.to('min'))
