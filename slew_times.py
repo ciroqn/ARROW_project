@@ -76,4 +76,5 @@ ang_dist3 = lon_70_radec.separation(nep_radec)
 
 slew_time3 = ang_dist3 / travel_speed
 
+# Prints ~ 3.9 mins
 print('The approx. time from longitude 70 to NEP is ', slew_time3.to('min'))
