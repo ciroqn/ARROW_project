@@ -5,6 +5,8 @@ from astropy.time import Time
 
 #<------------------------------- SLEW FROM PARK TO NEP -------------------------------->
 
+# ----> NOT NECESSARY FOR SESSION (SINCE RFI PICKED UP EARLY IN OTHER SESSIONS NEAR NEP)
+
 # First create SkyCoords for Parking Position of ARROW and NEP. Az/Alt of Park is (180, 80) deg.
 park_radec = SkyCoord('22h21m00s',  '+42d04m00s')  # Approx. RA/Dec coords of Park position on 4/11/21 at ~1930 
 nep_radec = SkyCoord('18h00m00s', '+66d33m00s')
@@ -32,6 +34,8 @@ slew_time = ang_dist_deg / travel_speed
 print(slew_time.to('min'))
 
 #<------------------------------ SLEW TIME FROM NEP TO SPECIFIED LONGITUDE-------------------------------->
+
+# ----> NOT NECESSARY NOW THAT NEP SCANS HAVE MOVED TIME-SLOT
 
 # Slew time from NEP to first longitude location (in this case l = 50)
 
